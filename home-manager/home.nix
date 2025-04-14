@@ -83,20 +83,7 @@
     enable = true;
     
     extraConfig = ''    
-    Host cos
-      Hostname ssh.cosng.net
-      PubkeyAuthentication no
-      ForwardAgent yes
-      User e215298
-      DynamicForward 127.0.0.1:9905
-      ProxyCommand ssh sshext nc %h %p
-      StrictHostKeyChecking no
 
-    Host sshext
-      Hostname ssh-ext.cosng.net
-      PubkeyAuthentication no
-      User e215298
-      StrictHostKeyChecking no
 
     Host 10.0.0.1
 	KexAlgorithms +diffie-hellman-group1-sha1
