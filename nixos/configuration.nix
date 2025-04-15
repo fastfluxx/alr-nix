@@ -76,7 +76,7 @@
 
 
 
-  #programs.zsh.enable = true;
+  programs.zsh.enable = true;
 
    
   # Open ports in the firewall.
