@@ -9,12 +9,14 @@
 
 
 
-  # Bootloader.
+  # GRUB bootloader
   boot.loader.grub.enable = true;
-  ## Verify Disk device
-  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.device = "/dev/nvme0n1";
   boot.loader.grub.useOSProber = true;
 
+  # EFI systemd bootloader
+  #boot.loader.systemd-boot.enable = true;
+  #boot.loader.efi.canTouchEfiVariables = true;
 
 
   ## Enable flakes
