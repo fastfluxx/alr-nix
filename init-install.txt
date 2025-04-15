@@ -1,0 +1,5 @@
+# Make a copy of you hardware configuration file located in /etc/nix/
+
+# Enable the flakes command in current shell:
+export NIX_CONFIG="experimental-features = nix-command flakes"
+
