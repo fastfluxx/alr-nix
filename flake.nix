@@ -28,6 +28,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./nixos/configuration.nix
+          ./nixos/hardware-configuration.nix
         ];
       };
     };
