@@ -23,6 +23,13 @@
   nix.settings.experimental-features = "nix-command flakes";
 
 
+  # COSMIC GDM
+
+  ## COSMIC Login manager
+  services.displayManager.cosmic-greeter.enable = true;
+
+  ## COSMIC GDM
+  services.desktopManager.cosmic.enable = true;
 
   networking.hostName = "alr-nix"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
