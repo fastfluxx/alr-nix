@@ -32,6 +32,8 @@
         pkgs.p7zip
         pkgs.bat
         pkgs.dig
+        # Picture view
+        pkgs.qimgv
 	# Notes
         pkgs.obsidian
 	# File transfer
@@ -50,6 +52,8 @@
 	pkgs.firefox
 	# Office Stuff
         #pkgs.libreoffice
+        # Version control
+        pkgs.git
   ];
 
   home.file = {
@@ -58,7 +62,7 @@
 
   
   home.sessionVariables = {
-    # EDITOR = "vim";
+    EDITOR = "vim";
   };
 
   # Configure programs
@@ -133,7 +137,7 @@ programs.zsh = {
             size = 10000;
         };
 
-        initExtra = 
+        initContent = 
         "
           # Check if zsh-autosuggestions script is not downloaded
           if [[ ! -f ~/.zsh/zsh-autosuggestions.zsh ]]; then
