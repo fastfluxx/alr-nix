@@ -32,6 +32,8 @@
         pkgs.p7zip
         pkgs.bat
         pkgs.dig
+        # VPN
+        pkgs.wireguard-tools
         # Picture view
         pkgs.qimgv
 	# Notes
@@ -44,7 +46,6 @@
 	pkgs.wireshark
 	# Remote Desktop
         pkgs.remmina
-        #pkgs.realvnc-vnc-viewer
         #pkgs.gnome.vinagre
 	# Video
 	pkgs.vlc
