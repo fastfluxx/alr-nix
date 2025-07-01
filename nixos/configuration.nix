@@ -27,9 +27,12 @@
 
   ## COSMIC Login manager
   services.displayManager.cosmic-greeter.enable = true;
-
   ## COSMIC GDM
   services.desktopManager.cosmic.enable = true;
+
+  # Gnome Failover
+  #services.displayManager.gdm.enable = true;
+  #services.desktopManager.gnome.enable = true;
 
   networking.hostName = "alr-nix"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -43,7 +46,7 @@
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth.powerOnBoot = false;
 
   # Set your time zone.
   time.timeZone = "Europe/Oslo";
