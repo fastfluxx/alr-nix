@@ -32,6 +32,7 @@
         pkgs.p7zip
         pkgs.bat
         pkgs.dig
+        pkgs.neofetch
         # VPN
         pkgs.wireguard-tools
         # Picture view
