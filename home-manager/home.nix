@@ -58,24 +58,26 @@
         pkgs.git
   ];
 
-  home.file = {
-    # Home dotfiles
-  };
+
 
   
   home.sessionVariables = {
-    EDITOR = "vim";
+    EDITOR = "nvim";
   };
 
   # Configure programs
 
 
-  programs.vim = {
-    enable = true;
-    
-    settings = {    
-      number = true;
-    };
+  programs.neovim = {
+
+  enable = true;
+  defaultEditor = true;
+  
+
+  extraPackages = with pkgs.vimPlugins; [
+
+    #vim-plug
+  ];
 
   };
 
@@ -176,7 +178,18 @@ programs.zsh = {
 
       };
 
+  home.file = {
+    # Home dotfiles
 
+  ".config/nvim/init.lua".text = ''
+    -- your Lua config here
+    vim.opt.number = true
+    vim.opt.relativenumber = false
+
+  '';
+
+
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
