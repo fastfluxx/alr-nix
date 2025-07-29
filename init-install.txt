@@ -45,3 +45,4 @@ sudo nixos-install
 # Enable the flakes command in current shell:
 export NIX_CONFIG="experimental-features = nix-command flakes"
 
+git clone https://github.com/fastfluxx/alr-nix.git
