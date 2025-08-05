@@ -31,6 +31,14 @@
           ./alr-home/nixos/hardware-configuration.nix
         ];
       };
+
+      alr-work = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./alr-work/nixos/configuration.nix
+          ./alr-work/nixos/hardware-configuration.nix
+        ];
+      };
     };
 
     # Home manager config
@@ -42,6 +50,15 @@
           ./alr-home/home-manager/home.nix
         ];
       };
+
+      "alr-work" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          ./alr-work/home-manager/home.nix
+        ];
+      };
+
     };
 
   };
