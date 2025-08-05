@@ -24,22 +24,22 @@
   in {
     # NixOS system config
     nixosConfigurations = {
-      alr-nix = nixpkgs.lib.nixosSystem {
+      alr-home = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          ./nixos/configuration.nix
-          ./nixos/hardware-configuration.nix
+          ./alr-home/nixos/configuration.nix
+          ./alr-home/nixos/hardware-configuration.nix
         ];
       };
     };
 
     # Home manager config
     homeConfigurations = {
-      "alr-nix" = home-manager.lib.homeManagerConfiguration {
+      "alr-home" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
-          ./home-manager/home.nix
+          ./alr-home/home-manager/home.nix
         ];
       };
     };
