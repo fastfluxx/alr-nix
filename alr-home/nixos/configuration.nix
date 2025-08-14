@@ -62,7 +62,8 @@
 
   services.syncthing = {
     enable = true;
-    openDefaultPorts = true; # Open ports in the firewall for Syncthing
+    dataDir = "/home/alr/syncthing";
+    user = "alr";
   };
 
   #security.rtkit.enable = true;
