@@ -44,6 +44,8 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  #networking.bridges."virbr0".interfaces = [];
+
   # Enable bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = false;
@@ -62,7 +64,10 @@
 
 
   #security.rtkit.enable = true;
-  
+
+  # Enable virtualization (KVM/QEMU)
+  virtualisation.libvirtd.enable = true;
+
 
   # Configure console keymap
   console.keyMap = "no";
@@ -72,7 +77,7 @@
     isNormalUser = true;
     description = "alr";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "kvm" ];
     packages = with pkgs; [];
   };
 
@@ -82,7 +87,12 @@
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
   git
+  vi
+  iptables
+  ebtables
+  dnsmasq
   ];
+
 
 
 
