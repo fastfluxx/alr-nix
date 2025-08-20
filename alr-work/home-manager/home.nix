@@ -33,6 +33,8 @@
         pkgs.bat
         pkgs.dig
         pkgs.neofetch
+	# To enable copy-paste
+	pkgs.wl-clipboard
         # VPN
         pkgs.wireguard-tools
         # Picture view
