@@ -69,6 +69,13 @@
   virtualisation.libvirtd.enable = true;
 
 
+  # Enable virtualization (Docker)
+
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
+
   # Configure console keymap
   console.keyMap = "no";
 
@@ -77,7 +84,7 @@
     isNormalUser = true;
     description = "alr";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "kvm" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "kvm" "docker"];
     packages = with pkgs; [];
   };
 
