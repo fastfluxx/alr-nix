@@ -39,7 +39,6 @@
           ./alr-work/nixos/hardware-configuration.nix
         ];
       };
-    };
 
       nix-srv = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
@@ -48,6 +47,8 @@
           ./nix-srv/nixos/hardware-configuration.nix
         ];
       };
+
+
     };
 
     # Home manager config
@@ -76,7 +77,7 @@
         ];
       };
 
-    
+    };
 
   };
 
