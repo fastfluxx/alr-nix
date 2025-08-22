@@ -41,6 +41,15 @@
       };
     };
 
+      nix-srv = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./nix-srv/nixos/configuration.nix
+          ./nix-srv/nixos/hardware-configuration.nix
+        ];
+      };
+    };
+
     # Home manager config
     homeConfigurations = {
       "alr-home" = home-manager.lib.homeManagerConfiguration {
@@ -56,6 +65,14 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           ./alr-work/home-manager/home.nix
+        ];
+      };
+
+      "nix-srv" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          ./nix-srv/home-manager/home.nix
         ];
       };
 
