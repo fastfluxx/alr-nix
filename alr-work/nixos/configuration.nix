@@ -63,6 +63,12 @@
   };
 
 
+  services.syncthing = {
+  enable = true;
+  dataDir = "/home/alr/syncthing";
+  user = "alr";
+  };
+
   #security.rtkit.enable = true;
 
   # Enable virtualization (KVM/QEMU)
@@ -71,10 +77,10 @@
 
   # Enable virtualization (Docker)
 
-  virtualisation.docker.rootless = {
-    enable = true;
-    setSocketVariable = true;
-  };
+  #virtualisation.docker.rootless = {
+  #  enable = true;
+  #  setSocketVariable = true;
+  #};
 
   # Configure console keymap
   console.keyMap = "no";
@@ -84,7 +90,7 @@
     isNormalUser = true;
     description = "alr";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "kvm" "docker"];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "kvm"];
     packages = with pkgs; [];
   };
 
