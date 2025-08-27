@@ -69,11 +69,17 @@
   dnsmasq
   ];
 
+
+  services.openssh.enable = true;
+
+  #networking.interfaces.ens3.ipv4.addresses = [ {
+  #	address = "10.99.99.30";
+  #	prefixLength = 24;
+  #} ];
+
+  networking.defaultGateway = "10.99.99.1";
+
   
-  #interfaces..useDHCP = false;
-  #interfaces..ipAddress = "10.99.99.";
-  #interfaces..subnetMask = "255.255.255.0";
-  #interfaces..gateway = "10.99.99.1";
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
