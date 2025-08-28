@@ -2,10 +2,10 @@
 { config, pkgs, ... }:
 
 {
-  #imports =
-    #[ # Include the results of the hardware scan.
-    #  ./hardware-configuration.nix
-    #];
+  imports =
+    [
+      ./hosts.nix
+    ];
 
 
 
@@ -44,11 +44,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  networking.extraHosts =
-    ''
-	10.80.90.10 kali.nat
-	10.99.99.10 kali.ho
-    '';
+
 
   #networking.bridges."virbr0".interfaces = [];
 
