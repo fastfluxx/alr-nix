@@ -44,7 +44,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-
+  networking.nameservers = [ "1.1.1.1" ]:
 
   #networking.bridges."virbr0".interfaces = [];
 
