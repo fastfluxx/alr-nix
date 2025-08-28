@@ -34,7 +34,7 @@
   #services.displayManager.gdm.enable = true;
   #services.desktopManager.gnome.enable = true;
 
-  networking.hostName = "alr-nix"; # Define your hostname.
+  networking.hostName = "alr-work"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -43,6 +43,12 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+
+  networking.extraHosts =
+    ''
+	10.80.90.10 kali.nat
+	10.99.99.10 kali.ho
+    '';
 
   #networking.bridges."virbr0".interfaces = [];
 
