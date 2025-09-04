@@ -33,6 +33,7 @@
         pkgs.bat
         pkgs.dig
         pkgs.neofetch
+	pkgs.sshfs
 	# To enable copy-paste
 	pkgs.wl-clipboard
         # VPN
@@ -49,7 +50,6 @@
 	pkgs.wireshark
 	# Remote Desktop
         pkgs.remmina
-        #pkgs.gnome.vinagre
 	# Video
 	pkgs.vlc
 	# Web Browser
@@ -58,6 +58,8 @@
         #pkgs.libreoffice
         # Version control
         pkgs.git
+	# IDE
+	pkgs.vscode
   ];
 
 
